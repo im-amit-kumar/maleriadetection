@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %}
+
+<head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+
+        <title> Pneumonia Diagnosis BVUCOEP </title>
+
+        <meta name="theme-color" content="#ffffff">
+
+        <style>
+        body
+        {
+        background-repeat:no-repeat;
+        background-attached:fixed;
+        background-size:cover;
+        background-image:url({{url_for('static',filename='bg.jpg')}})
+        </style>
+
+</head>
+
+
+<body>
+
+
+<center>
+    <img src="{{url_for('static',filename='bvp.png')}}"></img>
+
+
+    <b><u>
+        <h2>Bharati Vidyapeeth College Of Engineering</h2><br>
+        <h2>B.tech Final Year Project</h2><br>
+        <h2>Analysis of RBC blood samples for prediction of Maleria Disease</h2>
+
+
+    </b></u>
+
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Please Upload Your RBC blood sample
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h2 id="result">
+        <span> </span>
+    </h2>
+
+</div>
+
+
+</center>
+
+
+{% endblock %}
+</body>
